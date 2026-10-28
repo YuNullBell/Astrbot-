@@ -1,0 +1,44 @@
+{
+  "enabled": {
+    "description": "启用粤语 + 繁體字",
+    "type": "bool",
+    "hint": "关闭后机器人恢复默认语言风格",
+    "default": true
+  },
+  "scope": {
+    "description": "生效范围",
+    "type": "string",
+    "hint": "all = 群聊和私聊都生效；group = 只在群聊；private = 只在私聊",
+    "default": "all"
+  },
+  "locale": {
+    "description": "繁體字形",
+    "type": "string",
+    "hint": "zh-hk = 港式（默認，裡/著）；zh-tw = 台式（裡/著 用法略有差異）",
+    "default": "zh-hk"
+  },
+  "convert_traditional": {
+    "description": "发送前做简转繁兜底",
+    "type": "bool",
+    "hint": "模型偶尔会漏简体，开启后用 zhconv 统一转换；会自动跳过代码块、链接、CQ 码",
+    "default": true
+  },
+  "protect_code_and_links": {
+    "description": "转换时保护代码与链接",
+    "type": "bool",
+    "hint": "跳过 ```代码块```、`行内代码`、URL 与 CQ 码，避免转坏",
+    "default": true
+  },
+  "style_prompt": {
+    "description": "自定义粤语风格提示词",
+    "type": "text",
+    "hint": "留空使用内置提示词（香港粤语口语 + 全繁體 + 保留人格语气）",
+    "default": ""
+  },
+  "debug": {
+    "description": "打印调试日志",
+    "type": "bool",
+    "hint": "在 AstrBot 日志里输出提示词注入与转换次数",
+    "default": false
+  }
+}
