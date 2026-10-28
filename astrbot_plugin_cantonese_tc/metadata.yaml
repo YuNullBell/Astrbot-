@@ -1,0 +1,24 @@
+name: astrbot_plugin_cantonese_tc
+display_name: 粤语繁体
+desc: 让机器人只用粤语口语 + 繁體字回复；提示词约束 + 发送前字形兜底两重保险。
+help: |
+  装上即生效，所有回复都会变成「香港粤语口语 + 繁體字」。
+
+  实现：
+  1. 每次请求模型前，往系统提示词追加粤语/繁體要求（人格设定保留，只换语言）；
+  2. 发送前用 zhconv 把正文里残留的簡體字转成繁體（HK 字形），
+     自动跳过代码块、行内代码、链接、CQ 码，不会转坏格式。
+
+  配置：
+  - scope：all / group / private，控制哪些会话生效
+  - locale：zh-hk（港式，默认）/ zh-tw（台式）
+  - convert_traditional：关掉就只靠提示词，不做字形兜底
+  - style_prompt：留空用内置粤语提示词，可自行改写
+  - debug：日志里打印注入/转换情况
+
+  调试命令：/繁体测试 这个软件真的很厉害
+version: v1.0.0
+author: DSH
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.0.0"
